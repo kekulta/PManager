@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="outer_corner_radius">32dp</dimen>
+    <dimen name="inner_corner_radius">28dp</dimen>
+    <dimen name="outer_inner_margin">8dp</dimen>
+</resources>
