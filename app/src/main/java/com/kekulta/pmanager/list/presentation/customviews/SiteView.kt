@@ -1,12 +1,17 @@
-package com.kekulta.pmanager
+package com.kekulta.pmanager.list.presentation.customviews
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
+import com.kekulta.pmanager.R
 import com.kekulta.pmanager.databinding.SiteviewLayoutBinding
+import com.kekulta.pmanager.list.presentation.ui.loadFavicon
+import com.kekulta.pmanager.list.presentation.vo.SiteVo
 import com.kekulta.pmanager.shared.utils.getDrawable
 import com.kekulta.pmanager.shared.utils.getMaterialColorStateList
+import com.kekulta.pmanager.shared.utils.gone
+import com.kekulta.pmanager.shared.utils.show
 import com.google.android.material.R as Rm
 
 class SiteView @JvmOverloads constructor(
@@ -18,7 +23,7 @@ class SiteView @JvmOverloads constructor(
     init {
         orientation = HORIZONTAL
         background = getDrawable(R.drawable.outer_background)
-        backgroundTintList = getMaterialColorStateList(Rm.attr.colorSurfaceContainerHighest)
+        backgroundTintList = getMaterialColorStateList(Rm.attr.colorSurfaceContainerHigh)
 
         layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
     }
@@ -26,5 +31,12 @@ class SiteView @JvmOverloads constructor(
     fun bind(vo: SiteVo) {
         binding.faviconIv.loadFavicon(vo.name)
         binding.siteNameTv.text = vo.name
+
+        if (vo.login.isNullOrBlank()) {
+            binding.loginTv.gone()
+        } else {
+            binding.loginTv.text = vo.login
+            binding.loginTv.show()
+        }
     }
 }

@@ -1,5 +1,7 @@
 package com.kekulta.pmanager.shared.utils
 
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -127,5 +129,11 @@ inline fun <reified T> instantCombine(vararg flows: Flow<T>) = channelFlow {
                 send(array.filter { it.first }.map { it.second })
             }
         }
+    }
+}
+
+fun <T> Fragment.collectInLifecycleScope(flow: Flow<T>, collector: FlowCollector<T>) {
+    lifecycleScope.launch {
+        flow.collect(collector)
     }
 }

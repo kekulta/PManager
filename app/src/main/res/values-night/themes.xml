@@ -1,6 +1,5 @@
 <resources>
-
-    <style name="Base.Theme.PManager" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.PManager" parent="Base.Theme.PManager">
         <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

@@ -20,7 +20,11 @@ fun View.gone() {
     visibility = View.GONE
 }
 
-fun <V : View, T> V.applyOrGone(param: T?, block: V.(param: T) -> Unit) {
+
+fun <V : View, T> V.applyOrGone(
+    param: T?,
+    block: V.(param: T) -> Unit
+) {
     if (param == null) {
         gone()
         return

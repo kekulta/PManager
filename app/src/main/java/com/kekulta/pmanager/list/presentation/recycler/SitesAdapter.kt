@@ -1,9 +1,11 @@
-package com.kekulta.pmanager
+package com.kekulta.pmanager.list.presentation.recycler
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.kekulta.pmanager.list.presentation.customviews.SiteView
+import com.kekulta.pmanager.list.presentation.vo.SiteVo
 
 class SitesAdapter : ListAdapter<SiteVo, SitesAdapter.SiteViewHolder>(DIFF_CALLBACK) {
     class SiteViewHolder(private val view: SiteView) : RecyclerView.ViewHolder(view) {

@@ -1,18 +1,15 @@
-package com.kekulta.pmanager
+package com.kekulta.pmanager.list.presentation.ui
 
-import android.net.Uri
 import android.widget.ImageView
-import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.kekulta.pmanager.R
+import com.kekulta.pmanager.list.domain.formatters.toFaviconUri
 
 fun ImageView.loadFavicon(siteName: String) {
     Glide.with(this)
         .load(siteName.toFaviconUri())
+        .error(R.drawable.baseline_network_wifi_24)
         .diskCacheStrategy(DiskCacheStrategy.DATA)
         .into(this)
-}
-
-fun String.toFaviconUri(): Uri {
-    return "https://$this/favicon.ico".toUri()
 }

@@ -2,6 +2,7 @@ package com.kekulta.pmanager
 
 import android.app.Application
 import com.kekulta.pmanager.di.koinModule
+import com.kekulta.pmanager.di.viewModels
 import logcat.AndroidLogcatLogger
 import logcat.LogPriority
 import org.koin.android.ext.koin.androidContext
@@ -23,7 +24,7 @@ class App : Application() {
     private fun startKoin() {
         startKoin {
             androidContext(instance)
-            modules(koinModule)
+            modules(koinModule, viewModels)
         }
     }
 

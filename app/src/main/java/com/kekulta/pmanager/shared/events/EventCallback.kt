@@ -1,6 +1,3 @@
 package com.kekulta.pmanager.shared.events
 
-
-sealed class UiEvent() {
-
-}
+typealias EventCallback = ((Event) -> Unit)

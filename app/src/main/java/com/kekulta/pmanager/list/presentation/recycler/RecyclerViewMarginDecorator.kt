@@ -1,4 +1,4 @@
-package com.kekulta.pmanager
+package com.kekulta.pmanager.list.presentation.recycler
 
 import android.graphics.Rect
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 
 class RecyclerViewMarginDecorator(
     private val margin: Int,
-    private val columns: Int
+    private val columns: Int = 1
 ) :
     ItemDecoration() {
 

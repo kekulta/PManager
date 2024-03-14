@@ -55,11 +55,9 @@
 
         <item name="android:statusBarColor">?colorSurface</item>
         <item name="android:navigationBarColor">?colorSurface</item>
-        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.PManager" parent="Base.Theme.PManager">
-        <item name="android:statusBarColor">?colorSurface</item>
-        <item name="android:navigationBarColor">?colorSurfaceContainerHigh</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
